@@ -54,6 +54,12 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
+  if (idade > 16) {
+    mensagemEl.textContent = "A idade mínima para inscrição é 16 anos.";
+    mensagemEl.className = "mensagem erro";
+    return;
+  }
+
   const valor = calcularValorInscricao(estudante);
   inscritos.push({ nome, idade, estudante, valor });
 
